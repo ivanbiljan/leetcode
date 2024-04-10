@@ -28,9 +28,7 @@ public class Solution {
             return;
         }
 
-        var target = digits[ix];
-        var mappedLetters = Keypad[target];
-        foreach (var mappedLetter in Keypad[target]) {
+        foreach (var mappedLetter in Keypad[digits[ix]]) {
             currentCombo[ix] = mappedLetter;
             ComputeCombinations(digits, ix + 1, currentCombo, ans);
             currentCombo[ix] = default(char);
