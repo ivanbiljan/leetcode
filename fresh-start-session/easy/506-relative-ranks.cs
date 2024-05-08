@@ -7,13 +7,13 @@ public class Solution {
 
         var ans = new string[score.Length];
         while (pq.Count > 0) {
-            var ix = pq.Count - 1;
+            var count = pq.Count;
             var el = pq.Dequeue();
-            ans[el] = ix switch {
-                0 => "Gold Medal",
-                1 => "Silver Medal",
-                2 => "Bronze Medal",
-                _ => (ix + 1).ToString()
+            ans[el] = count switch {
+                1 => "Gold Medal",
+                2 => "Silver Medal",
+                3 => "Bronze Medal",
+                _ => count.ToString()
             };
         }
 
